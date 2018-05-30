@@ -1,0 +1,152 @@
+1:
+Time Tuple:
+Many of Python's time functions handle time as a tuple of 9 numbers.
+As shown below -
+Index	Field			Values
+0	4-digit year		2008
+1	Month			1 to 12
+2	Day			1 to 31
+3	Hour			0 to 23
+4	Minute			0 to 59
+5	Second			0 to 61 (60 or 61 are leap-seconds)
+6	Day of Week		0 to 6 (0 is Monday)
+7	Day of year		1 to 366 (Julian day)
+8	Daylight savings	-1, 0, 1, -1 means library determines 
+				DST
+
+2:
+import time
+print(time.localtime())
+#formatting localtime
+print(time.asctime(time.localtime()))
+print(time.gmtime())
+#formatting gmtime
+print(time.asctime(time.gmtime()))
+
+output:
+time.struct_time(tm_year=2018, tm_mon=5, tm_mday=30, tm_hour=23, 
+tm_min=21, tm_sec=20, tm_wday=2, tm_yday=150, tm_isdst=0)
+Wed May 30 23:21:20 2018
+time.struct_time(tm_year=2018, tm_mon=5, tm_mday=30, tm_hour=17, 
+tm_min=51, tm_sec=20, tm_wday=2, tm_yday=150, tm_isdst=0)
+Wed May 30 17:51:20 2018
+
+
+3:
+import datetime
+a=datetime.date(1997,4,21)
+print(a)
+print("Extracting month")
+print(a.month)
+
+output:
+1997-04-21
+Extracted month
+4
+
+4:
+import datetime
+a=datetime.date(1997,4,21)
+print(a)
+print("Extracted day")
+print(a.day)
+
+output:
+1997-04-21
+Extracted month
+21
+
+5:
+import datetime
+a=datetime.date(1995,12,8)
+print(a)
+print("Extracting date")
+print(a.day)
+
+output:
+1995-12-08
+Extracting date
+8
+
+6:
+import time
+print(time.localtime())
+
+output:
+time.struct_time(tm_year=2018, tm_mon=5, tm_mday=30, tm_hour=23, 
+tm_min=30, tm_sec=56, tm_wday=2, tm_yday=150, tm_isdst=0)
+
+7:
+import math
+fact = int(input("Enter a number to calculate factorial : "))
+print(math.factorial(fact))
+output:
+C:\Users\win10\PycharmProjects\python\venv\Scripts\python.exe 
+C:/Users/win10/PycharmProjects/python/fact.py
+Enter a number to calculate factorial : 5
+120
+
+Process finished with exit code 0
+
+8:
+import math
+a = int(input("Enter first number : "))
+b = int(input("Enter second number : "))
+print(math.gcd(a,b))
+output:
+Enter first number : 2
+Enter second number : 4
+2
+
+9:
+import os
+print(os.getcwd())
+print(os.environ)
+
+
+output:
+C:\Users\win10\PycharmProjects\python\venv\Scripts\python.exe 
+C:/Users/win10/PycharmProjects/python/month.py
+C:\Users\win10\PycharmProjects\python
+environ({'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 
+'C:\\Users\\win10\\AppData\\Roaming', 'COMMONPROGRAMFILES': 'C:\\Program 
+Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files 
+(x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common 
+Files', 'COMPUTERNAME': 'DESKTOP-EEPRLHN', 'COMSPEC': 
+'C:\\WINDOWS\\system32\\cmd.exe', 'DRIVERDATA': 
+'C:\\Windows\\System32\\Drivers\\DriverData', 
+'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 
+'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'HOMEDRIVE': 'C:', 
+'HOMEPATH': '\\Users\\win10', 'LOCALAPPDATA': 
+'C:\\Users\\win10\\AppData\\Local', 'LOGONSERVER': 
+'\\\\DESKTOP-EEPRLHN', 'NUMBER_OF_PROCESSORS': '4', 'ONEDRIVE': 
+'C:\\Users\\win10\\OneDrive', 'OS': 'Windows_NT', 'PATH': 
+'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program 
+Files\\Git\\cmd;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\win10\\Anaconda3;C:\\Users\\win10\\Anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\win10\\Anaconda3\\Library\\usr\\bin;C:\\Users\\win10\\Anaconda3\\Library\\bin;C:\\Users\\win10\\Anaconda3\\Scripts;C:\\Users\\win10\\AppData\\Local\\Programs\\Python\\Python36\\Scripts\\;C:\\Users\\win10\\AppData\\Local\\Programs\\Python\\Python36\\;C:\\Program 
+Files\\Java\\jdk1.8.0_45\\bin;C:\\Users\\win10\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\win10\\PycharmProjects\\python\\venv\\Scripts', 
+'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 
+'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'Intel64 
+Family 6 Model 78 Stepping 3, GenuineIntel', 'PROCESSOR_LEVEL': '6', 
+'PROCESSOR_REVISION': '4e03', 'PROGRAMDATA': 'C:\\ProgramData', 
+'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program 
+Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '(venv) 
+$P$G', 'PSMODULEPATH': 
+'C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules\\', 'PUBLIC': 
+'C:\\Users\\Public', 'PYCHARM_HOSTED': '1', 'PYTHONIOENCODING': 'UTF-8', 
+'PYTHONPATH': 'C:\\Users\\win10\\PycharmProjects\\python', 
+'PYTHONUNBUFFERED': '1', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 
+'SYSTEMROOT': 'C:\\WINDOWS', 'TEMP': 
+'C:\\Users\\win10\\AppData\\Local\\Temp', 'TMP': 
+'C:\\Users\\win10\\AppData\\Local\\Temp', 'USERDOMAIN': 
+'DESKTOP-EEPRLHN', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-EEPRLHN', 
+'USERNAME': 'win10', 'USERPROFILE': 'C:\\Users\\win10', 
+'VBOX_MSI_INSTALL_PATH': 'C:\\Program Files\\Oracle\\VirtualBox\\', 
+'VIRTUAL_ENV': 'C:\\Users\\win10\\PycharmProjects\\python\\venv', 
+'WINDIR': 'C:\\WINDOWS', '_OLD_VIRTUAL_PATH': 
+'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program 
+Files\\Git\\cmd;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Users\\win10\\Anaconda3;C:\\Users\\win10\\Anaconda3\\Library\\mingw-w64\\bin;C:\\Users\\win10\\Anaconda3\\Library\\usr\\bin;C:\\Users\\win10\\Anaconda3\\Library\\bin;C:\\Users\\win10\\Anaconda3\\Scripts;C:\\Users\\win10\\AppData\\Local\\Programs\\Python\\Python36\\Scripts\\;C:\\Users\\win10\\AppData\\Local\\Programs\\Python\\Python36\\;C:\\Program 
+Files\\Java\\jdk1.8.0_45\\bin;C:\\Users\\win10\\AppData\\Local\\Microsoft\\WindowsApps;', 
+'_OLD_VIRTUAL_PROMPT': '$P$G'})
+
+Process finished with exit code 0
+
